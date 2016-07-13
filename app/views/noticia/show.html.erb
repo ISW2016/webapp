@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @noticium.titulo %>
+</p>
+
+<%=image_tag @noticium.imagen.url %>
+
+<p>
+  <strong>Contenido:</strong>
+  <%= @noticium.contenido %>
+</p>
+
+
+
+
+<%= link_to 'Editar', edit_noticium_path(@noticium) %> |
+<%= link_to 'Atrás', noticia_path %>

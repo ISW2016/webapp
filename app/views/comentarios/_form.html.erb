@@ -1,0 +1,4 @@
+<%= form_for([@foro, @foro.comentarios.build]) do |f| %>
+	<%= f.text_area :contenido %>
+	<%= f.submit "Enviar Comentario" %>
+<% end %>

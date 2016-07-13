@@ -1,0 +1,14 @@
+  <h2> Este tema tiene <%= pluralize(@comentarios.count, "Comentario") %></h2>
+ <% @comentarios.each do |comentario| %>
+  <p><b> <%= comentario.usuario.nombre %> </b></p>
+	 <p><%= comentario.contenido %></p>
+
+	 <% if current_usuario == comentario.usuario %>
+ 	<%= link_to "Eliminar Comentario", [comentario.foro, comentario], method: :delete %>
+ 	<%= link_to "Editar Comentario", edit_foro_comentario_path(comentario.foro, comentario) %>
+	<% end %>
+<%end%>
+
+	<% if usuario_signed_in? %>
+	 <%= render 'comentarios/form' %>
+	 <% end %>
